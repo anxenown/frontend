@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workspace</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,200&display=swap" rel="stylesheet">
+    <!-- css-1 -->
+    <link rel="stylesheet" href="static/css/style.css">
+    <!-- css-2 -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+
+           
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <i class='bx bx-menu menu-icon'></i>
+            <span class="logo-name">WorkSpace</span>
+            <button class="login">Login/SignUp</button>
+        </div>
+        <div class="sidebar">
+            <div class="logo">
+                <i class='bx bx-menu menu-icon'></i>
+                <span class="logo-name">WorkSpace</span>
+            </div>
+            <div class="slidebar-content">
+                <ul class="lists">
+                    <li class="lists">
+                        <a href="#" class="nav-link">
+                            <i class='bx bx-notepad icon' ></i>
+                            <span class="link">All Notes</span>
+                        </a>
+                    </li>
+                    <li class="lists">
+                        <a href="#" class="nav-link">
+                            <i class='bx bx-note icon' ></i>
+                            <span class="link">New</span>
+                        </a>
+                    </li>
+                    <li class="lists">
+                        <a href="#" class="nav-link">
+                            <i class='bx bx-star icon' ></i>
+                            <span class="link">Favorite</span>
+                        </a>
+                    </li>
+                    <li class="lists">
+                        <a href="#" class="nav-link">
+                            <i class='bx bx-cog icon' ></i>
+                            <span class="link">Setting</span>
+                        </a>
+                    </li>
+                    <li class="lists">
+                        <a href="#" class="nav-link">
+                            <i class='bx bx-info-circle icon' ></i>
+                            <span class="link">About</span>
+                        </a>
+                    </li
+                    <li class="lists">
+                        <a href="#" class="nav-link">
+                            <i class='bx bx-error icon' ></i>
+                            <span class="link">Report an issue</span>
+                        </a>
+                    </li></ul>
+            </div>
+        </div>    
+    </nav>
+    <section class="overlay"></section>
+    <script>
+        const navBar = document.querySelector("nav");
+        const menuBtn = document.querySelector(".menu-icon");
+        const overlay = document.querySelector(".overlay");
+        const sidebar = document.querySelector(".sidebar");
+        menuBtn.addEventListener("click", () => {
+            navBar.classList.toggle("open");
+        })
+
+        overlay.addEventListener("click", () => {
+            navBar.classList.remove("open");
+        })
+    </script>
+    <nav2>
+    <div class="enableFeatures">
+        <div class="logo2">
+            <i class='bx bxs-rectangle bx-rotate-90 rec-icon' style='color:#94b1bd'  ></i>
+            <span class="links">Apps</span>
+        </div>
+        <div class="enableContent">
+            <ul class="lists">
+                <li class="lists">
+                    <a href="#" class="nav-link">
+                        <i class='bx bxl-gmail icon'></i>
+                     
+                    </a>
+                </li>
+                <li class="lists">
+                    <a href="#" class="nav-link">
+                        <i class='bx bxl-google-cloud icon' ></i>
+                     
+                    </a>
+                </li>
+                <li class="lists">
+                    <a href="#" class="nav-link">
+                        <i class='bx bxl-google icon' ></i>
+                    
+                    </a>
+                </li>
+                <li class="lists">
+                    <a href="#" class="nav-link">
+                        <i class='bx bxl-whatsapp icon' ></i>
+                     
+                    </a>
+                </li>
+                <li class="lists">
+                    <a href="#" class="nav-link">
+                        <i class='bx bxs-brain icon' ></i>
+                    </a>
+                </li></ul>
+    </div>
+    </div>
+    </nav2>
+    <script>
+        const navBar2 = document.querySelector("nav2");
+        const enBtn = document.querySelector(".rec-icon");
+        const enableFeatures = document.querySelector(".enableFeatures");
+        enBtn.addEventListener("click", () => {
+            navBar2.classList.toggle("open");
+        })
+
+
+    </script>
+    <center>    
+    <div class="note-box">
+        <h1>NoteBox</h1>
+        <div class="title-container">
+            <input type="text" id="note-title" placeholder="Choose a note title..." name="">
+            <button id="saveBtn">Save</button>
+            <button id="editBtn">Edit</button>
+            <button id="importBtn">Import</button>
+            <button id="linkBtn">Link</button>  
+        </div>
+
+        <textarea id="textarea" placeholder="Type here..."></textarea>
+       
+        <h2>Recent Notes</h2>
+        <section id="output">
+        <div class="list">
+        <button class="delete">Delete</button>
+        <button class="fav"><i class='bx bx-star'></i></button>
+        <script>
+            const favBtn = document.querySelector(".fav");
+            favBtn.addEventListener("click", () => {
+                favBtn.classList.toggle("color");
+            })
+        </script>
+        <h2 class="output-title">Note</h2>
+        <p class="text">Note's information</p>
+        </div>
+        </section>
+    </div>
+    </center>
+<script type="text/javascript" src="static/js/note.js"></script>
+</body>
+</html>
