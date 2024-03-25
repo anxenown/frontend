@@ -17,18 +17,20 @@
            
 </head>
 <body>
+    <!-- logo -->
     <nav>
         <div class="logo">
             <i class='bx bx-menu menu-icon'></i>
-            <span class="logo-name">WorkSpace</span>
+            <span class="logo-name">NotesHub</span>
             <button class="login">Login/SignUp</button>
         </div>
+    <!--sidebar -->
         <div class="sidebar">
             <div class="logo">
                 <i class='bx bx-menu menu-icon'></i>
-                <span class="logo-name">WorkSpace</span>
+                <span class="logo-name">NotesHub</span>
             </div>
-            <div class="slidebar-content">
+            <div class="sidebar-content">
                 <ul class="lists">
                     <li class="lists">
                         <a href="#" class="nav-link">
@@ -48,18 +50,20 @@
                             <span class="link">Favorite</span>
                         </a>
                     </li>
+
                     <li class="lists">
                         <a href="#" class="nav-link">
                             <i class='bx bx-cog icon' ></i>
                             <span class="link">Setting</span>
                         </a>
                     </li>
+                    <br><br><br><br>
                     <li class="lists">
                         <a href="#" class="nav-link">
                             <i class='bx bx-info-circle icon' ></i>
                             <span class="link">About</span>
                         </a>
-                    </li
+                    </li>
                     <li class="lists">
                         <a href="#" class="nav-link">
                             <i class='bx bx-error icon' ></i>
@@ -69,6 +73,7 @@
             </div>
         </div>    
     </nav>
+    <!-- overlay -->
     <section class="overlay"></section>
     <script>
         const navBar = document.querySelector("nav");
@@ -83,69 +88,168 @@
             navBar.classList.remove("open");
         })
     </script>
+    <!-- enableFeatures -->
     <nav2>
     <div class="enableFeatures">
-        <div class="logo2">
-            <i class='bx bxs-rectangle bx-rotate-90 rec-icon' style='color:#94b1bd'  ></i>
-            <span class="links">Apps</span>
-        </div>
-        <div class="enableContent">
             <ul class="lists">
                 <li class="lists">
-                    <a href="#" class="nav-link">
+                    <a href="https://mail.google.com" target="_blank" class="nav-link">
                         <i class='bx bxl-gmail icon'></i>
                      
                     </a>
                 </li>
                 <li class="lists">
-                    <a href="#" class="nav-link">
+                    <a href="https://drive.google.com" target="_blank" class="nav-link">
                         <i class='bx bxl-google-cloud icon' ></i>
                      
                     </a>
                 </li>
                 <li class="lists">
-                    <a href="#" class="nav-link">
+                    <a href="https://www.google.com" target="_blank" class="nav-link">
                         <i class='bx bxl-google icon' ></i>
                     
                     </a>
                 </li>
                 <li class="lists">
-                    <a href="#" class="nav-link">
+                    <a href="https://web.whatsapp.com" target="_blank" class="nav-link">
                         <i class='bx bxl-whatsapp icon' ></i>
+
                      
                     </a>
                 </li>
                 <li class="lists">
-                    <a href="#" class="nav-link">
+                    <a href="https://chat.openai.com" target="_blank" blank class="nav-link">
                         <i class='bx bxs-brain icon' ></i>
                     </a>
                 </li></ul>
     </div>
-    </div>
     </nav2>
     <script>
         const navBar2 = document.querySelector("nav2");
-        const enBtn = document.querySelector(".rec-icon");
-        const enableFeatures = document.querySelector(".enableFeatures");
-        enBtn.addEventListener("click", () => {
+       
+        navBar2.addEventListener("click", () => {
             navBar2.classList.toggle("open");
         })
 
 
     </script>
+    <!-- note -->
     <center>    
     <div class="note-box">
         <h1>NoteBox</h1>
+        
+            <!-- edit -->
+                <div class="edit">
+                    <select class="change" onchange="changeFont(this.value)">
+                        <option value="Arial">Arial</option>
+                        <option value="Times New Roman">Times New Roman</option>
+                        <option value="Georgia">Georgia</option>
+                        <option value="Helvetica">Helvetica</option>
+                        <option value="Courier New">Courier New</option>
+                        <option value="Verdana">Verdana</option>
+                        <option value="Trebuchet MS">Trebuchet MS</option>
+                        <option value="Consolas">Consolas</option>
+                        <option value="Impact">Impact</option>
+                        <option value="Garamond">Garamond</option>
+                        <option value="Sans Serif">Sans Serif</option>
+                        <option value="Palatino">Palatino</option>
+                        <option value="Cursive">Cursive</option>
+                        <option value="fantasy">fantasy</option>
+                        <option value="monospace">monospace</option>
+                        <option value="serif">serif</option>
+                    </select>
+                    <select class="change" onchange="changeSize(this.value +'px')">
+                        <option>18</option>
+                        <option>8</option>
+                        <option>10</option>
+                        <option>12</option>
+                        <option>14</option>
+                        <option>16</option>                        
+                        <option>20</option>
+                        <option>22</option>
+                        <option>24</option>
+                        <option>26</option>
+                        <option>28</option>
+                        <option>30</option>
+                        <option>32</option>
+                        <option>34</option>
+                        <option>36</option>
+                        <option>48</option>
+                    </select>
+                    <input type="button" value="Bold" class="editBs" onclick="bold()">
+                    <input type="button" value="Italic" class="editBs" onclick="italic()">
+                    <input type="button" value="Underline" class="editBs" onclick="underline()">
+                </div>
+            
+            <script type="text/javascript" >
+                function changeFont(font){
+                    document.getElementById("textarea").style.fontFamily = font;
+                }
+                function changeSize(size){
+                    document.getElementById("textarea").style.fontSize = size;
+                }
+                function bold(){
+                    var bol= document.getElementById("textarea").style.fontWeight;
+                    if(bol=="normal"){
+                        document.getElementById("textarea").style.fontWeight="bold";
+                    }
+                    else{
+                        document.getElementById("textarea").style.fontWeight="normal";
+                    }
+                }
+                function italic(){
+                    var it= document.getElementById("textarea").style.fontStyle;
+                    if(it=="normal"){
+                        document.getElementById("textarea").style.fontStyle="italic";
+                    }
+                    else{
+                        document.getElementById("textarea").style.fontStyle="normal";
+                    }
+                }
+                function underline(){
+                    var ul= document.getElementById("textarea").style.textDecoration;
+                    if(ul=="none"){
+                        document.getElementById("textarea").style.textDecoration="underline";
+                    }
+                    else{
+                        document.getElementById("textarea").style.textDecoration="none";
+                    }
+                }
+            </script>
+            <!-- title-container  -->
         <div class="title-container">
             <input type="text" id="note-title" placeholder="Choose a note title..." name="">
             <button id="saveBtn">Save</button>
-            <button id="editBtn">Edit</button>
-            <button id="importBtn">Import</button>
-            <button id="linkBtn">Link</button>  
+            <!-- link -->
+            <button id="linkBtn">Link</button>
+            <!-- import -->
+            <a href="#"><button id="importBtn">Import</button></a>
+            <x>
+            <ul class="dropdown">
+                <li class="lists">
+                    <a href="#" class="dlink">
+                        <i class='bx bx-image-add icon'></i>                    
+                    </a>
+                </li>
+                <li class="lists">
+                    <a href="#" class="dlink">
+                        <i class='bx bxs-file-pdf icon' ></i>
+                     
+                    </a></li></ul>
+                    </x>
         </div>
-
+        <script>
+            const xc = document.querySelector("x");
+            const impBtn = document.querySelector("#importBtn");
+            impBtn.addEventListener("click", () => {
+                xc.classList.toggle("open");
+            })
+    
+    
+        </script>
+        <!-- textarea  -->
         <textarea id="textarea" placeholder="Type here..."></textarea>
-       
+        <!-- recent -->
         <h2>Recent Notes</h2>
         <section id="output">
         <div class="list">
@@ -163,6 +267,7 @@
         </section>
     </div>
     </center>
+    <!-- save js -->
 <script type="text/javascript" src="static/js/note.js"></script>
 </body>
 </html>

@@ -1,3 +1,4 @@
+// save | allnotes
 let inputTitle= document.getElementById("note-title");
 let saveBtn= document.getElementById("saveBtn");
 let inputText= document.getElementById("textarea");
