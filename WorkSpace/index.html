@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;1,200&display=swap" rel="stylesheet">
     <!-- css-1 -->
-    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="./static/css/style.css">
     <!-- css-2 -->
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 
@@ -181,7 +181,7 @@
                     <input type="button" value="Underline" class="editBs" onclick="underline()">
                 </div>
             
-            <script type="text/javascript" >
+            <script>
                 function changeFont(font){
                     document.getElementById("textarea").style.fontFamily = font;
                 }
@@ -216,24 +216,26 @@
                     }
                 }
             </script>
+            
             <!-- title-container  -->
         <div class="title-container">
             <input type="text" id="note-title" placeholder="Choose a note title..." name="">
             <button id="saveBtn">Save</button>
             <!-- link -->
-            <button id="linkBtn">Link</button>
+            <button id="linkBtn" onclick="addLink()">Link</button>
+    
             <!-- import -->
-            <a href="#"><button id="importBtn">Import</button></a>
+            <button id="importBtn">Import</button>
             <x>
             <ul class="dropdown">
                 <li class="lists">
                     <a href="#" class="dlink">
-                        <i class='bx bx-image-add icon'></i>                    
+                        <button><i class='bx bx-image-add icon'></i></button>                  
                     </a>
                 </li>
                 <li class="lists">
                     <a href="#" class="dlink">
-                        <i class='bx bxs-file-pdf icon' ></i>
+                        <button><i class='bx bxs-file-pdf icon' ></i></button>
                      
                     </a></li></ul>
                     </x>
@@ -246,28 +248,94 @@
             })
     
     
-        </script>
+        </script>       
+           
+          
         <!-- textarea  -->
-        <textarea id="textarea" placeholder="Type here..."></textarea>
+        
+        <textarea id="textarea" contenteditable="true" placeholder="Type here..."></textarea>
+          <!-- link -->
+        <script>
+            function addLink() {
+              var linkText = prompt("Enter the link text:", "Link Text");
+              var linkUrl = prompt("Enter the link URL:", "https://");
+          
+              if (linkText && linkUrl) {
+                  var textInput = document.getElementById("textarea");
+                  var link = '[' + linkText + '](' + linkUrl + ')';
+                  textInput.value += link + "🔗" +" ";
+              }
+          }
+          document.getElementById("textarea").addEventListener("dblclick", function(event) {
+              var target = event.target;
+              if (target.tagName === 'TEXTAREA') {
+                  var text = target.value;
+                  var cursorPosition = target.selectionStart;
+          
+                  // Find the start of the link text
+                  var linkTextStart = text.lastIndexOf('[', cursorPosition);
+                  if (linkTextStart === -1) return;
+                  
+                  // Find the end of the link text
+                  var linkTextEnd = text.indexOf(']', linkTextStart);
+                  if (linkTextEnd === -1) return;
+          
+                  // Find the start of the link URL
+                  var linkUrlStart = text.indexOf('](', linkTextEnd);
+                  if (linkUrlStart === -1) return;
+          
+                  // Find the end of the link URL
+                  var linkUrlEnd = text.indexOf(')', linkUrlStart);
+                  if (linkUrlEnd === -1) return;
+          
+                  // Extract link text and URL
+                  var linkText = text.substring(linkTextStart + 1, linkTextEnd);
+                  var linkUrl = text.substring(linkUrlStart + 2, linkUrlEnd);
+          
+                  // Check if this is the first click on the link text
+                  if (!target.dataset.clicked) {
+                      target.dataset.clicked = "true"; // Mark the link text as clicked
+                      return; // Do not proceed to confirm on the first click
+                  }
+          
+                  // Confirm opening link in a new window
+                  var confirmOpenNewPage = confirm("Open " + linkText + " in a new webpage?");
+                  if (confirmOpenNewPage) {
+                      if (linkUrl.trim() !== "") {
+                          window.open(linkUrl, '_blank');
+                      } else {
+                          alert("Invalid URL!");
+                      }
+                  }
+              }
+          });
+
+
+    </script>    
+
         <!-- recent -->
         <h2>Recent Notes</h2>
+        <h3 class="demo">Demo Note:</h3>
+
         <section id="output">
         <div class="list">
         <button class="delete">Delete</button>
-        <button class="fav"><i class='bx bx-star'></i></button>
+        <button class="fav">☆</button>
         <script>
-            const favBtn = document.querySelector(".fav");
-            favBtn.addEventListener("click", () => {
-                favBtn.classList.toggle("color");
+            favBs = document.querySelector(".fav");
+            favBs.addEventListener("click", () => {
+                favBs.classList.toggle("color");
             })
-        </script>
-        <h2 class="output-title">Note</h2>
+        </script> 
+
+        <h2 class="output-title">Title :   </h2>
         <p class="text">Note's information</p>
         </div>
         </section>
     </div>
+
     </center>
     <!-- save js -->
-<script type="text/javascript" src="static/js/note.js"></script>
+<script type="text/javascript" src="./static/js/note.js"></script>
 </body>
 </html>

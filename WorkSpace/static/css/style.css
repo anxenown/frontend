@@ -219,7 +219,7 @@ nav2.open .enableFeatures {
 x .dropdown {
     display: none;
     justify-content: center;
-    margin-left: 53.22%;
+    margin-left: 53.55%;
     position: absolute;
     list-style: none;
     padding: 0.1%;
@@ -230,15 +230,12 @@ x .dropdown {
 x.open .dropdown{
     display: block;
 }
-.dlink:hover{
-    background-color: #fffcfc;
-}
 .lists .dlink{
     display: flex;
     align-items: center;
     text-decoration: none;
     margin: 8px;
-    padding: 14px 12px;
+    /* padding: 14px 12px; */
     border-radius: 8px;
 }
 .dlink .icon{
@@ -246,11 +243,8 @@ x.open .dropdown{
     font-size: 20px;
     color: #000000;    
 }
-.dlink .link{
-    font-size: 18px;
-    color: #000000;
-    font-weight: 400;
-}
+
+
 
 #textarea{
     width: 68.2%;
@@ -280,14 +274,15 @@ x.open .dropdown{
 .output-title{
     font-size: 25px;
     padding: 1px;
-    margin-left: -30%;
     
 }
 .text{
     font-size: 18px;
     padding: 1px;
-    margin-left: -30%;
     
+}
+.demo{
+    margin-right: 60%;
 }
 
 .delete{
@@ -299,9 +294,9 @@ x.open .dropdown{
     float: right;
     margin-right: 2%;
     font-size: 20px;
-    border-radius: 4px;
+    border-radius: 5px;
     position: relative;
-    padding: 2px 2px 0px 2px;
+    padding: 0px 2px 2px 2px;
     cursor: pointer;
     background-color: #fff;
    
