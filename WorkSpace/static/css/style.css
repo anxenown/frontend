@@ -37,18 +37,19 @@ nav .logo{
     color: #333;
 }
 .login{
+    border: 0;
     font-size: 30px;
     font-weight: 550;
-    margin-left: 470%;
+    margin-left: 480%;
     padding: 5px;
     border-radius: 5px;
     display: flex;
     cursor: pointer;;
-    background-color: #ffffff;
+    background-color: #99e0cb;
 }
 .login:hover{
     background-color: #000000;
-    color: #ffffff;
+    color: #99e0cb;
 }
 /* sidebar */
 nav .sidebar{
@@ -270,9 +271,10 @@ nav2.open .enableFeatures {
     padding: 5px;
 }
 .fav{
+    border: 0;
     float: right;
     margin-right: 2%;
-    font-size: 20px;
+    font-size: 21.5px;
     border-radius: 5px;
     position: relative;
     padding: 0px 2px 2px 2px;
@@ -284,6 +286,6 @@ nav2.open .enableFeatures {
     background-color: #e9fafd;
 }
 .fav.color{
-    color: white;
+    color:#99e0cb;
     background-color: #000000;
 }
