@@ -11,10 +11,7 @@
     <!-- css-1 -->
     <link rel="stylesheet" href="./static/css/style.css">
     <!-- css-2 -->
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-
-
-           
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>           
 </head>
 <body>
     <!-- logo -->
@@ -22,7 +19,7 @@
         <div class="logo">
             <i class='bx bx-menu menu-icon'></i>
             <span class="logo-name">NotesHub</span>
-            <button class="login">Login/SignUp</button>
+            <button class="login"><i class='bx bxs-user-circle'></i></button>
         </div>
     <!--sidebar -->
         <div class="sidebar">
@@ -35,13 +32,35 @@
                     <li class="lists">
                         <a href="#" class="nav-link">
                             <i class='bx bx-notepad icon' ></i>
-                            <span class="link">All Notes</span>
+                            <span id="All_Notes" class="link">All Notes</span>
+                            <script>
+                                const All_Notes = document.querySelector("#All_Notes");
+                               
+                                All_Notes.addEventListener("click", () => {
+                                    
+
+                                })
+                        
+                        
+                            </script>
+
                         </a>
                     </li>
                     <li class="lists">
                         <a href="#" class="nav-link">
                             <i class='bx bx-note icon' ></i>
-                            <span class="link">New</span>
+                            <span id="New" class="link">New</span>
+                            <script>
+                                const New = document.querySelector("#New");
+                               
+                                New.addEventListener("click", () => {
+                                    inputTitle.value = "";
+                                    inputText.value = "";   
+                                })
+                        
+                        
+                            </script>
+
                         </a>
                     </li>
                     <li class="lists">
@@ -179,6 +198,8 @@
                     <input type="button" value="Bold" class="editBs" onclick="bold()">
                     <input type="button" value="Italic" class="editBs" onclick="italic()">
                     <input type="button" value="Underline" class="editBs" onclick="underline()">
+                    <!-- link -->
+                    <button id="linkBtn" onclick="addLink()">Link</button>
                 </div>
             
             <script>
@@ -220,37 +241,8 @@
             <!-- title-container  -->
         <div class="title-container">
             <input type="text" id="note-title" placeholder="Choose a note title..." name="">
-            <button id="saveBtn">Save</button>
-            <!-- link -->
-            <button id="linkBtn" onclick="addLink()">Link</button>
-    
-            <!-- import -->
-            <button id="importBtn">Import</button>
-            <x>
-            <ul class="dropdown">
-                <li class="lists">
-                    <a href="#" class="dlink">
-                        <button><i class='bx bx-image-add icon'></i></button>                  
-                    </a>
-                </li>
-                <li class="lists">
-                    <a href="#" class="dlink">
-                        <button><i class='bx bxs-file-pdf icon' ></i></button>
-                     
-                    </a></li></ul>
-                    </x>
-        </div>
-        <script>
-            const xc = document.querySelector("x");
-            const impBtn = document.querySelector("#importBtn");
-            impBtn.addEventListener("click", () => {
-                xc.classList.toggle("open");
-            })
-    
-    
-        </script>       
-           
-          
+            <button id="saveBtn">Save</button>     
+        </div>          
         <!-- textarea  -->
         
         <textarea id="textarea" contenteditable="true" placeholder="Type here..."></textarea>

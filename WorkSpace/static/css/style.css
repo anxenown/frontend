@@ -1,7 +1,6 @@
 /* fonts */
 body {
-    min-height: 100;
-    margin: auto;
+    min-height: 100; 
     padding: 0;
     font-family: 'Poppins', sans-serif;
     background-color: #e7ebf1;
@@ -38,14 +37,14 @@ nav .logo{
     color: #333;
 }
 .login{
-    font-size: 16px;
+    font-size: 30px;
     font-weight: 550;
-    margin-left: 285%;
-    padding: 10px;
+    margin-left: 470%;
+    padding: 5px;
     border-radius: 5px;
     display: flex;
     cursor: pointer;;
-    background-color: #cadddf;
+    background-color: #ffffff;
 }
 .login:hover{
     background-color: #000000;
@@ -120,18 +119,15 @@ nav.open~ .overlay {
 nav2 {
     position : fixed;
     background-color: #ffffff;
-    align-items: center;
     box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
     } 
 
 .enableFeatures{
     margin-left: 91%;
-    margin-top: 2%;
+    margin-top: 14vh;
     position: fixed;
-    display: relative;
-    height: 60%;
-    right:-6%;
-    justify-content: space-between;
+    height: 50vh;
+    right: -7%;
     padding: 30px 0;
     background-color: #ffffff;
     box-shadow: 0px 5px 10px rgb(0, 0, 0, 0.1);
@@ -183,11 +179,21 @@ nav2.open .enableFeatures {
 .edit{
     display: flex;
 }
+#linkBtn{
+    border: 0;
+    font-size: 18px;
+    color: #000000;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #9c9dec; 
+    cursor: pointer; 
+    
+}
 /* title-container  */
 .title-container{
     width: 70%;
     display: grid;
-    grid-template-columns: 4fr 0.5fr 0.5fr 0.5fr;
+    grid-template-columns: 5fr 0.5fr;
     grid-gap: 15px 10px;
     margin-bottom: 0.6%;
 }
@@ -214,41 +220,14 @@ nav2.open .enableFeatures {
     color:white;
     ;
 }
-
-/* import */
-x .dropdown {
-    display: none;
-    justify-content: center;
-    margin-left: 53.55%;
-    position: absolute;
-    list-style: none;
-    padding: 0.1%;
-    background-color: #ecd39c;
-    cursor: pointer;
-    border-radius: 5px;
-}
-x.open .dropdown{
-    display: block;
-}
-.lists .dlink{
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    margin: 8px;
-    /* padding: 14px 12px; */
-    border-radius: 8px;
-}
-.dlink .icon{
+.icon{
     margin-right: 14px;
     font-size: 20px;
     color: #000000;    
 }
-
-
-
 #textarea{
     width: 68.2%;
-    height: 45vh;
+    height: 35vh;
     margin-top: 0.9%;
     border: 0;
     font-size: 18px;
