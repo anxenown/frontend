@@ -3,8 +3,10 @@ let inputTitle = document.getElementById("note-title");
 let saveBtn = document.getElementById("saveBtn");
 let inputText = document.getElementById("textarea");
 let output = document.getElementById("output");
+let AllNotes = document.getElementById("All_Notes");
+let ANBody = document.getElementsByClassName("AllNotesBody")[0];
 
-let child, favBtn, delBtn, h2, p;
+let child, favBtn, delBtn, h2, p ;
 
 saveBtn.addEventListener('click', (e) => { 
     e.preventDefault();
@@ -34,7 +36,7 @@ saveBtn.addEventListener('click', (e) => {
         child.appendChild(h2);
         child.appendChild(p);
         output.appendChild(child);
-
+     
         // clear input fields
         inputTitle.value = "";
         inputText.value = "";
@@ -46,4 +48,19 @@ saveBtn.addEventListener('click', (e) => {
         output.removeChild(this.parentElement);
     });
 });
+AllNotes.addEventListener('click', (e) => {
+    e.preventDefault();              
+        child.appendChild(delBtn); // This ensures the delete button is added after the fav button
+        child.appendChild(favBtn);
+        child.appendChild(h2);
+        child.appendChild(p);
+        output.appendChild(child);
+        ANBody.appendChild(output);
 
+    favBtn.addEventListener("click", () => {
+        favBtn.classList.toggle("color");
+    })
+    delBtn.addEventListener('click', function() {
+        output.removeChild(this.parentElement);
+    });
+});

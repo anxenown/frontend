@@ -14,6 +14,100 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>           
 </head>
 <body>
+    <!-- AllNotes -->
+    <center>
+    <div class="AllNotesContainer">
+        <div class="AllNotesHeader">
+            <button class="CloseBtn">X</button></div>
+        <div class="AllNotesBody">
+            <h1>Notes:</h1>
+        </div>
+    </div>
+    </center>
+    <script>
+        const CloseBtn = document.querySelector(".CloseBtn");
+        CloseBtn.addEventListener("click", () => {
+            ANcontent.style.display = "none";
+        })
+    </script>
+    <!-- Favourites -->
+    <center>
+        <div class="FavouriteContainer">
+            <div class="FavouriteHeader">
+                <button class="CloseBtn1">X</button></div>
+            <div class="FavouriteBody">
+                <h1>Favourites:</h1>
+            </div>
+        </div>
+        </center>
+        <script>
+            const CloseBtn1 = document.querySelector(".CloseBtn1");
+            CloseBtn1.addEventListener("click", () => {
+                Fcontent.style.display = "none";
+            })
+        </script>
+    <!-- Settings -->
+        <center>
+            <div class="SettingsContainer">
+                <div class="SettingsHeader">
+                    <button class="CloseBtn2">X</button></div>
+                <div class="SettingsBody">
+                    <h2>Settings:</h2>
+                    <hr>
+                    <li class="S">Dark Mode: <button id="Darkon" class="dl">ON</button> | <button id="Light" class="dl">OFF</button></li>
+                </div>
+            </div>
+        </center>
+            <script>
+                const bodyTag = document.querySelector("body");
+                const CloseBtn2 = document.querySelector(".CloseBtn2");
+                const dark = document.querySelector("#Darkon");
+                const light = document.querySelector("#Light");
+                CloseBtn2.addEventListener("click", () => {
+                    Scontent.style.display = "none";
+                })
+                dark.addEventListener("click", () => {
+                    bodyTag.classList.toggle("dark");
+                })
+                light.addEventListener("click", () => {
+                    bodyTag.classList.remove("dark");
+                })
+
+            </script> 
+    <!-- About -->
+        <center>
+                <div class="AboutContainer">
+                    <div class="AboutHeader">
+                        <button class="CloseBtn3">X</button></div>
+                    <div class="AboutBody">
+                        <h2>About:</h2>
+                    </div>
+                </div>
+        </center>
+                <script>
+                    const CloseBtn3 = document.querySelector(".CloseBtn3");
+                    CloseBtn3.addEventListener("click", () => {
+                        Acontent.style.display = "none";
+                    })
+                </script> 
+        <center>
+            <!-- Report an issue -->
+                    <div class="RAIContainer">
+                        <div class="RAIHeader">
+                            <button class="CloseBtn4">X</button></div>
+                        <div class="RAIBody">
+                            <h2>Report an issue :</h2>
+
+                        </div>
+                    </div>
+        </center>
+                <script>
+                        const CloseBtn4 = document.querySelector(".CloseBtn4");
+                        CloseBtn4.addEventListener("click", () => {
+                            Rcontent.style.display = "none";
+                        })
+                </script>
+    
     <!-- logo -->
     <nav>
         <div class="logo">
@@ -29,27 +123,19 @@
             </div>
             <div class="sidebar-content">
                 <ul class="lists">
-                    <li class="lists">
-                        <a href="#" class="nav-link">
-                            <i class='bx bx-notepad icon' ></i>
-                            <span id="All_Notes" class="link">All Notes</span>
-                            <script>
-                                const All_Notes = document.querySelector("#All_Notes");
-                               
-                                All_Notes.addEventListener("click", () => {
-                                    
+                    <li class="lists">                           
+                        <span id="All_Notes" class="nav-link"><i class='bx bx-notepad icon' ></i>All Notes</span>
+                        <script>
+                            const All_Notes = document.querySelector("#All_Notes");
+                            const ANcontent = document.querySelector(".AllNotesContainer");
+                            All_Notes.addEventListener("click", () => {
+                                ANcontent.style.display = "block";
+                            })
+                        </script>
 
-                                })
-                        
-                        
-                            </script>
-
-                        </a>
                     </li>
-                    <li class="lists">
-                        <a href="#" class="nav-link">
-                            <i class='bx bx-note icon' ></i>
-                            <span id="New" class="link">New</span>
+                    <li class="lists">  
+                            <span id="New" class="nav-link"><i class='bx bx-note icon' ></i>New</span>
                             <script>
                                 const New = document.querySelector("#New");
                                
@@ -60,34 +146,57 @@
                         
                         
                             </script>
-
-                        </a>
                     </li>
                     <li class="lists">
-                        <a href="#" class="nav-link">
-                            <i class='bx bx-star icon' ></i>
-                            <span class="link">Favorite</span>
-                        </a>
+                            
+                            <span id="Favourite" class="nav-link"><i class='bx bx-star icon' ></i>Favorite</span>
+                            <script>
+                                const F = document.querySelector("#Favourite");
+                                const Fcontent = document.querySelector(".FavouriteContainer");
+                                F.addEventListener("click", () => {
+                                    Fcontent.style.display = "block";
+                                })
+                            </script>
+                   
                     </li>
 
                     <li class="lists">
-                        <a href="#" class="nav-link">
-                            <i class='bx bx-cog icon' ></i>
-                            <span class="link">Setting</span>
-                        </a>
+                            
+                            <span id="Settings" class="nav-link"><i class='bx bx-cog icon' ></i>Settings</span>
+                            <script>
+                                const S = document.querySelector("#Settings");
+                                const Scontent = document.querySelector(".SettingsContainer");
+                                S.addEventListener("click", () => {
+                                    Scontent.style.display = "block";
+                                })
+                            </script>
+                      
                     </li>
                     <br><br><br><br>
                     <li class="lists">
-                        <a href="#" class="nav-link">
-                            <i class='bx bx-info-circle icon' ></i>
-                            <span class="link">About</span>
-                        </a>
+                            
+                            <span id ="About" class="nav-link"><i class='bx bx-info-circle icon' ></i>About</span>
+                            <script>
+                                const A = document.querySelector("#About");
+                                const Acontent = document.querySelector(".AboutContainer");
+                                A.addEventListener("click", () => {
+                                    Acontent.style.display = "block";
+                                })
+                            </script>
+                     
                     </li>
                     <li class="lists">
-                        <a href="#" class="nav-link">
-                            <i class='bx bx-error icon' ></i>
-                            <span class="link">Report an issue</span>
-                        </a>
+        
+                            
+                            <span id ="ReportAnIssue" class="nav-link"><i class='bx bx-error icon' ></i>Report an issue</span>
+                            <script>
+                                const RAI = document.querySelector("#ReportAnIssue");
+                                const Rcontent = document.querySelector(".RAIContainer");
+                                RAI.addEventListener("click", () => {
+                                    Rcontent.style.display = "block";
+                                })
+                            </script>
+                    
                     </li></ul>
             </div>
         </div>    
@@ -107,6 +216,8 @@
             navBar.classList.remove("open");
         })
     </script>
+      
+
     <!-- enableFeatures -->
     <nav2>
     <div class="enableFeatures">
@@ -321,7 +432,7 @@
         </script> 
 
         <h2 class="output-title">Title :   </h2>
-        <p class="text">Note's information</p>
+        <p class="text">_Note's information</p>
         </div>
         </section>
     </div>
@@ -330,4 +441,5 @@
     <!-- save js -->
 <script type="text/javascript" src="./static/js/note.js"></script>
 </body>
+
 </html>
