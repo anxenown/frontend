@@ -7,11 +7,8 @@ body {
     background-color: #e7ebf1;
 }
 body.dark {
-    min-height: 100; 
-    padding: 0;
-    font-family: 'Poppins', sans-serif;
-    background-color: #000000;
-    color: #8f3b3b;
+    background-color: #000000ea;
+    color: #ffffffd3;
 
 }
 
@@ -24,7 +21,7 @@ body.dark {
     border: 0;
     border-radius: 5px;
     padding: 5px;
-    background-color: #baabce;
+    background-color: rgb(171, 194, 189);
     cursor: pointer;
 }
 .AllNotesContainer{
@@ -38,6 +35,9 @@ body.dark {
     position: fixed;
     display: none;
     z-index: 1;
+}
+.AllNotesContainer.dark{
+    background-color: #333;
 }
 .CloseBtn{
     float: right;
@@ -61,6 +61,9 @@ body.dark {
     position: fixed;
     display: none;
     z-index: 1;
+}
+.FavouriteContainer.dark{
+    background-color: #333;
 }
 .CloseBtn1{
     float: right;
@@ -86,6 +89,9 @@ body.dark {
     display: none;
     z-index: 1;
 }
+.SettingsContainer.dark{
+    background-color: #333;
+}
 .CloseBtn2{
     float: right;
     margin: 10px;
@@ -108,6 +114,9 @@ body.dark {
     position: fixed;
     display: none;
     z-index: 1;
+}
+.AboutContainer.dark{
+    background-color: #333;
 }
 .CloseBtn3{
     float: right;
@@ -132,6 +141,9 @@ body.dark {
     display: none;
     z-index: 1;
 }
+.RAIContainer.dark{
+    background-color: #333;
+}
 .CloseBtn4{
     float: right;
     margin: 10px;
@@ -153,6 +165,10 @@ background-color: #fff;
 display: flex;
 align-items: center;
 box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+}
+nav.dark{   
+background-color: #333;
+
 } 
 
 nav .logo{
@@ -165,13 +181,41 @@ nav .logo{
     margin-right: 14px;
     margin-left: 24px;
     cursor: pointer;
-    color: #333;
+    color: #000000;
 }
-
+.logo.dark .menu-icon{
+    color: #ffffffd3;
+}
 .logo .logo-name{
     font-size: 24px;
     font-weight: 500;
-    color: #333;
+    color: #000000;
+}
+.logo.dark .logo-name{
+    color: #ffffffd3;
+}
+nav .logo1{
+    display: flex;
+    align-items: center;
+    
+}
+.logo1 .menu-icon1{
+    font-size: 24px;
+    margin-right: 14px;
+    margin-left: 24px;
+    cursor: pointer;
+    color: #000000;
+}
+.logo1.dark .menu-icon1{
+    color: #ffffffd3;
+}
+.logo1 .logo-name1{
+    font-size: 24px;
+    font-weight: 500;
+    color: #000000;
+}
+.logo1.dark .logo-name1{
+    color: #ffffffd3;
 }
 .login{
     border: 0;
@@ -203,6 +247,9 @@ nav .sidebar{
 nav.open .sidebar{
     left: 0;
     } 
+nav.dark .sidebar{
+    background-color: #333;
+}    
 .sidebar .sidebar-content{
     display: flex;
     height: 100%;
@@ -216,7 +263,7 @@ nav.open .sidebar{
     list-style: none;
 }
 .nav-link:hover{
-    background-color: #cadddf;
+    background-color: rgb(173, 160, 160);
 }
 .lists .nav-link{
     display: flex;
@@ -246,9 +293,9 @@ nav.open~ .overlay {
 /* enable features */
 nav2 {
     position : fixed;
-    background-color: #ffffff;
     box-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
-    } 
+    }
+
 
 .enableFeatures{
     margin-left: 91%;
@@ -265,6 +312,9 @@ nav2 {
 nav2.open .enableFeatures {
     right: 0%;
     }
+nav2.dark .enableFeatures{
+    background-color: #333;
+    }         
 
 .enableFeatures .lists{
     list-style: none;
@@ -333,6 +383,9 @@ nav2.open .enableFeatures {
     padding: 10px;
     background-color: #fff;
 }
+.title-container.dark input{
+    background-color: #333;
+}
 .title-container button,.delete{
     border: 0;
     font-size: 18px;
@@ -351,7 +404,7 @@ nav2.open .enableFeatures {
 .icon{
     margin-right: 14px;
     font-size: 20px;
-    color: #000000;    
+    color: #656d70;    
 }
 #textarea{
     width: 68.2%;
@@ -365,6 +418,10 @@ nav2.open .enableFeatures {
     padding: 10px;
     background-color: #ffffff;
 }
+#textarea.dark{
+    background-color: #333;
+    color: #ffffff9c;
+}
 #output{
     width: 70%;
     display: grid;
@@ -372,12 +429,13 @@ nav2.open .enableFeatures {
     grid-gap: 15px 10px;
 }
 .list{
-    background-color: #a9b6c4;
+    background-color: #465d77;
     padding: 15px;
     border-radius: 10px;
     padding-left: 20px;
     position: relative;
 }
+
 .output-title{
     font-size: 25px;
     padding: 1px;
@@ -410,7 +468,7 @@ nav2.open .enableFeatures {
    
 }
 .fav:hover{
-    background-color: #e9fafd;
+    background-color: #e9fafdd0;
 }
 .fav.color{
     color:#99e0cb;

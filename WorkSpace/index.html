@@ -29,6 +29,7 @@
         CloseBtn.addEventListener("click", () => {
             ANcontent.style.display = "none";
         })
+       
     </script>
     <!-- Favourites -->
     <center>
@@ -72,6 +73,12 @@
                 light.addEventListener("click", () => {
                     bodyTag.classList.remove("dark");
                 })
+                dark.addEventListener("click", () => {
+                    Scontent.classList.toggle("dark");
+                })
+                light.addEventListener("click", () => {
+                    Scontent.classList.remove("dark");
+                })
 
             </script> 
     <!-- About -->
@@ -89,6 +96,13 @@
                     CloseBtn3.addEventListener("click", () => {
                         Acontent.style.display = "none";
                     })
+                    dark.addEventListener("click", () => {
+                        Acontent.classList.toggle("dark");
+                    })
+                    light.addEventListener("click", () => {
+                        Acontent.classList.remove("dark");
+                    })
+                    
                 </script> 
         <center>
             <!-- Report an issue -->
@@ -106,6 +120,12 @@
                         CloseBtn4.addEventListener("click", () => {
                             Rcontent.style.display = "none";
                         })
+                        dark.addEventListener("click", () => {
+                            Rcontent.classList.toggle("dark");
+                        })
+                        light.addEventListener("click", () => {
+                            Rcontent.classList.remove("dark");
+                        })
                 </script>
     
     <!-- logo -->
@@ -117,9 +137,9 @@
         </div>
     <!--sidebar -->
         <div class="sidebar">
-            <div class="logo">
-                <i class='bx bx-menu menu-icon'></i>
-                <span class="logo-name">NotesHub</span>
+            <div class="logo1">
+                <i class='bx bx-menu menu-icon1'></i>
+                <span class="logo-name1">NotesHub</span>
             </div>
             <div class="sidebar-content">
                 <ul class="lists">
@@ -131,19 +151,29 @@
                             All_Notes.addEventListener("click", () => {
                                 ANcontent.style.display = "block";
                             })
+                            dark.addEventListener("click", () => {
+                                ANcontent.classList.toggle("dark");
+                            })
+                            light.addEventListener("click", () => {
+                                ANcontent.classList.remove("dark");
+                            })
+
                         </script>
 
                     </li>
                     <li class="lists">  
                             <span id="New" class="nav-link"><i class='bx bx-note icon' ></i>New</span>
                             <script>
+                                
                                 const New = document.querySelector("#New");
-                               
                                 New.addEventListener("click", () => {
                                     inputTitle.value = "";
                                     inputText.value = "";   
                                 })
-                        
+                                light.addEventListener("click", () => {
+                                    ANcontent.classList.remove("dark");
+                                })
+  
                         
                             </script>
                     </li>
@@ -151,11 +181,18 @@
                             
                             <span id="Favourite" class="nav-link"><i class='bx bx-star icon' ></i>Favorite</span>
                             <script>
-                                const F = document.querySelector("#Favourite");
+                                      const F = document.querySelector("#Favourite");
                                 const Fcontent = document.querySelector(".FavouriteContainer");
                                 F.addEventListener("click", () => {
                                     Fcontent.style.display = "block";
                                 })
+                                dark.addEventListener("click", () => {
+                                Fcontent.classList.toggle("dark");
+                                })
+                                light.addEventListener("click", () => {
+                                Fcontent.classList.remove("dark");
+                                })
+           
                             </script>
                    
                     </li>
@@ -164,11 +201,14 @@
                             
                             <span id="Settings" class="nav-link"><i class='bx bx-cog icon' ></i>Settings</span>
                             <script>
+
                                 const S = document.querySelector("#Settings");
                                 const Scontent = document.querySelector(".SettingsContainer");
                                 S.addEventListener("click", () => {
                                     Scontent.style.display = "block";
                                 })
+                        
+                  
                             </script>
                       
                     </li>
@@ -177,11 +217,14 @@
                             
                             <span id ="About" class="nav-link"><i class='bx bx-info-circle icon' ></i>About</span>
                             <script>
+
                                 const A = document.querySelector("#About");
                                 const Acontent = document.querySelector(".AboutContainer");
                                 A.addEventListener("click", () => {
                                     Acontent.style.display = "block";
                                 })
+                                
+    
                             </script>
                      
                     </li>
@@ -190,11 +233,13 @@
                             
                             <span id ="ReportAnIssue" class="nav-link"><i class='bx bx-error icon' ></i>Report an issue</span>
                             <script>
+                          
                                 const RAI = document.querySelector("#ReportAnIssue");
                                 const Rcontent = document.querySelector(".RAIContainer");
                                 RAI.addEventListener("click", () => {
                                     Rcontent.style.display = "block";
                                 })
+                                
                             </script>
                     
                     </li></ul>
@@ -208,12 +253,32 @@
         const menuBtn = document.querySelector(".menu-icon");
         const overlay = document.querySelector(".overlay");
         const sidebar = document.querySelector(".sidebar");
+        const logod = document.querySelector(".logo");
+        const logod1 = document.querySelector(".logo1");
         menuBtn.addEventListener("click", () => {
             navBar.classList.toggle("open");
         })
 
         overlay.addEventListener("click", () => {
             navBar.classList.remove("open");
+        })
+        dark.addEventListener("click", () => {
+            navBar.classList.toggle("dark");
+        })
+        light.addEventListener("click", () => {
+            navBar.classList.remove("dark");
+        })
+        dark.addEventListener("click", () => {
+            logod.classList.toggle("dark");
+        })
+        light.addEventListener("click", () => {
+            logod.classList.remove("dark");
+        })
+        dark.addEventListener("click", () => {
+            logod1.classList.toggle("dark");
+        })
+        light.addEventListener("click", () => {
+            logod1.classList.remove("dark");
         })
     </script>
       
@@ -260,7 +325,12 @@
         navBar2.addEventListener("click", () => {
             navBar2.classList.toggle("open");
         })
-
+        dark.addEventListener("click", () => {
+            navBar2.classList.toggle("dark");
+        })
+        light.addEventListener("click", () => {
+            navBar2.classList.remove("dark");
+        })
 
     </script>
     <!-- note -->
@@ -353,10 +423,28 @@
         <div class="title-container">
             <input type="text" id="note-title" placeholder="Choose a note title..." name="">
             <button id="saveBtn">Save</button>     
-        </div>          
+        </div> 
+        <script>
+            const titled= document.querySelector(".title-container");
+            dark.addEventListener("click", () => {
+                titled.classList.toggle("dark");
+            })
+            light.addEventListener("click", () => {
+                titled.classList.remove("dark");
+            })
+        </script>         
         <!-- textarea  -->
         
         <textarea id="textarea" contenteditable="true" placeholder="Type here..."></textarea>
+        <script>
+            const text= document.querySelector("#textarea");
+            dark.addEventListener("click", () => {
+                text.classList.toggle("dark");
+            })
+            light.addEventListener("click", () => {
+                text.classList.remove("dark");
+            })
+        </script>
           <!-- link -->
         <script>
             function addLink() {
@@ -412,8 +500,6 @@
                   }
               }
           });
-
-
     </script>    
 
         <!-- recent -->
@@ -436,7 +522,7 @@
         </div>
         </section>
     </div>
-
+    
     </center>
     <!-- save js -->
 <script type="text/javascript" src="./static/js/note.js"></script>
