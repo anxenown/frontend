@@ -49,18 +49,20 @@ saveBtn.addEventListener('click', (e) => {
     });
 });
 AllNotes.addEventListener('click', (e) => {
-    e.preventDefault();              
-        child.appendChild(delBtn); // This ensures the delete button is added after the fav button
-        child.appendChild(favBtn);
-        child.appendChild(h2);
-        child.appendChild(p);
-        output.appendChild(child);
-        ANBody.appendChild(output);
+    e.preventDefault(); 
 
+    
+    child.appendChild(delBtn); // This ensures the delete button is added after the fav button
+    child.appendChild(favBtn);
+    child.appendChild(h2);
+    child.appendChild(p);
+    output.appendChild(child);
+    ANBody.appendChild(output);
+   
     favBtn.addEventListener("click", () => {
         favBtn.classList.toggle("color");
     })
     delBtn.addEventListener('click', function() {
-        output.removeChild(this.parentElement);
+        ANBody.removeChild(this.parentElement);
     });
-});
+});        

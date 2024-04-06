@@ -36,6 +36,7 @@ body.dark {
     display: none;
     z-index: 1;
 }
+
 .AllNotesContainer.dark{
     background-color: #333;
 }
@@ -221,7 +222,7 @@ nav .logo1{
     border: 0;
     font-size: 30px;
     font-weight: 550;
-    margin-left: 480%;
+    margin-left: 470%;
     padding: 5px;
     border-radius: 5px;
     display: flex;
@@ -263,7 +264,7 @@ nav.dark .sidebar{
     list-style: none;
 }
 .nav-link:hover{
-    background-color: rgb(173, 160, 160);
+    background-color: rgb(173, 160, 160, 0.57);
 }
 .lists .nav-link{
     display: flex;
@@ -289,6 +290,106 @@ nav.open~ .overlay {
     left: 260px;
     pointer-events: auto;
 }
+/* log/sign */
+.lsl{
+    list-style-type: none;
+    margin-left: 86%;
+    padding: 5px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    position: fixed;
+    display: none;
+}
+.lsl.open{
+    display: block;
+}
+.lsl.dark{
+    background-color: #333;
+}
+.LSB{
+    border: 0;
+    font-size: 18px;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #9ac7ba;
+    cursor: pointer; 
+}
+.signup{
+    float: right;
+    margin-right: 2%;
+    border: 0;
+    width: 15%;
+    display: none;
+    flex-direction: column;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    z-index: 9;
+}
+.signup.open{
+    display: flex;
+}
+.signup.dark{
+    background-color: #333;
+}
+.CloseBtn6{
+    width: 15%;
+    margin: 5px;
+    border: 0;
+    font-size: 18px;
+    color: #ffffff;
+    border-radius: 5px;
+    background-color: #f05757; 
+    cursor: pointer; 
+}
+.CloseBtn7{ 
+    width: 15%;
+    margin: 5px;
+    border: 0;
+    font-size: 18px;
+    color: #ffffff;
+    border-radius: 5px;
+    background-color: #f05757; 
+    cursor: pointer;    
+}
+.submitbtn{
+    border: 0;
+    font-size: 18px;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #8fdbc4;
+    cursor: pointer; 
+}
+.user{
+    margin: 5%;
+    font-size: 16px;
+    border-radius: 5px;
+}
+.pass{
+    margin: 5%;
+    font-size: 16px;
+    border-radius: 5px;
+}
+.log{
+    float: right;
+    margin-right: 2%;
+    border: 0;
+    width: 15%;
+    display: none;
+    flex-direction: column;
+    padding: 10px;
+    font-size: 16px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    z-index: 9;
+ }
+ .log.open{
+     display: flex;
+ }
+ .log.dark{
+     background-color: #333;
+ }
 
 /* enable features */
 nav2 {
@@ -340,7 +441,7 @@ nav2.dark .enableFeatures{
 }
 .editBs{
     border: 0;
-    font-size: 18px;
+    font-size: 16px;
     color: #000000;
     border-radius: 5px;
     padding: 10px;
@@ -404,7 +505,7 @@ nav2.dark .enableFeatures{
 .icon{
     margin-right: 14px;
     font-size: 20px;
-    color: #656d70;    
+    color: #4e5457;    
 }
 #textarea{
     width: 68.2%;

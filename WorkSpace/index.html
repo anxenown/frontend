@@ -14,13 +14,16 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>           
 </head>
 <body>
+
     <!-- AllNotes -->
     <center>
     <div class="AllNotesContainer">
         <div class="AllNotesHeader">
             <button class="CloseBtn">X</button></div>
+            <h1>All Notes:</h1>
+            <hr>
         <div class="AllNotesBody">
-            <h1>Notes:</h1>
+       
         </div>
     </div>
     </center>
@@ -36,8 +39,10 @@
         <div class="FavouriteContainer">
             <div class="FavouriteHeader">
                 <button class="CloseBtn1">X</button></div>
-            <div class="FavouriteBody">
                 <h1>Favourites:</h1>
+                <hr
+            <div class="FavouriteBody">
+
             </div>
         </div>
         </center>
@@ -52,9 +57,10 @@
             <div class="SettingsContainer">
                 <div class="SettingsHeader">
                     <button class="CloseBtn2">X</button></div>
-                <div class="SettingsBody">
                     <h2>Settings:</h2>
                     <hr>
+                <div class="SettingsBody">
+
                     <li class="S">Dark Mode: <button id="Darkon" class="dl">ON</button> | <button id="Light" class="dl">OFF</button></li>
                 </div>
             </div>
@@ -86,8 +92,10 @@
                 <div class="AboutContainer">
                     <div class="AboutHeader">
                         <button class="CloseBtn3">X</button></div>
-                    <div class="AboutBody">
                         <h2>About:</h2>
+                        <hr>
+                    <div class="AboutBody">
+       
                     </div>
                 </div>
         </center>
@@ -109,9 +117,10 @@
                     <div class="RAIContainer">
                         <div class="RAIHeader">
                             <button class="CloseBtn4">X</button></div>
-                        <div class="RAIBody">
                             <h2>Report an issue :</h2>
-
+                            <hr>
+                        <div class="RAIBody">
+          
                         </div>
                     </div>
         </center>
@@ -134,6 +143,7 @@
             <i class='bx bx-menu menu-icon'></i>
             <span class="logo-name">NotesHub</span>
             <button class="login"><i class='bx bxs-user-circle'></i></button>
+            
         </div>
     <!--sidebar -->
         <div class="sidebar">
@@ -212,7 +222,7 @@
                             </script>
                       
                     </li>
-                    <br><br><br><br>
+                   <br><br><br><hr>
                     <li class="lists">
                             
                             <span id ="About" class="nav-link"><i class='bx bx-info-circle icon' ></i>About</span>
@@ -239,13 +249,80 @@
                                 RAI.addEventListener("click", () => {
                                     Rcontent.style.display = "block";
                                 })
-                                
+                                RAI.addEventListener("click", () => {
+                                    Acontent.style.display = "none";
+                                })
+                                RAI.addEventListener("click", () => {
+                                    Scontent.style.display = "none";
+                                })
+                                RAI.addEventListener("click", () => {
+                                    Fcontent.style.display = "none";
+                                })
+                                RAI.addEventListener("click", () => {
+                                    ANcontent.style.display = "none";
+                                })
                             </script>
                     
                     </li></ul>
             </div>
         </div>    
     </nav>
+    <script>
+        A.addEventListener("click", () => {
+            Rcontent.style.display = "none";
+        })
+        A.addEventListener("click", () => {
+            Scontent.style.display = "none";
+        })
+        A.addEventListener("click", () => {
+            Fcontent.style.display = "none";
+        })
+        A.addEventListener("click", () => {
+            ANcontent.style.display = "none";
+        })
+
+
+        S.addEventListener("click", () => {
+            Acontent.style.display = "none";
+        })
+        S.addEventListener("click", () => {
+            Rcontent.style.display = "none";
+        })
+        S.addEventListener("click", () => {
+            Fcontent.style.display = "none";
+        })
+        S.addEventListener("click", () => {
+            ANcontent.style.display = "none";
+        })
+
+
+        F.addEventListener("click", () => {
+            Acontent.style.display = "none";
+        })
+        F.addEventListener("click", () => {
+            Scontent.style.display = "none";
+        })
+        F.addEventListener("click", () => {
+            Rcontent.style.display = "none";
+        })
+        F.addEventListener("click", () => {
+            ANcontent.style.display = "none";
+        })
+
+
+        All_Notes.addEventListener("click", () => {
+            Acontent.style.display = "none";
+        })
+        All_Notes.addEventListener("click", () => {
+            Scontent.style.display = "none";
+        })
+        All_Notes.addEventListener("click", () => {
+            Fcontent.style.display = "none";
+        })
+        All_Notes.addEventListener("click", () => {
+            Rcontent.style.display = "none";
+        })
+    </script>
     <!-- overlay -->
     <section class="overlay"></section>
     <script>
@@ -280,6 +357,7 @@
         light.addEventListener("click", () => {
             logod1.classList.remove("dark");
         })
+        
     </script>
       
 
@@ -330,6 +408,87 @@
         })
         light.addEventListener("click", () => {
             navBar2.classList.remove("dark");
+        })
+
+    </script>
+    <!-- login/signup -->
+    <li class="lsl"><button id="logB" class="LSB">Login</button> | <button id="signB" class="LSB">Signup</button></li>
+    <!-- signup -->
+    <signup class="signup" >
+    <button class="CloseBtn6">X</button> 
+    <label>Username</label>    
+    <input type="text" id="user1" class="user" placeholder="Username" name="s1" required>
+    <label>Password</label>
+    <input type="password" id="pass1" class="pass" placeholder="Password" name="s2" required>
+    <button class="submitbtn" type="submit" onclick="signup()">Signup</button>
+    </signup>
+    <!-- login -->
+    <login class="log">
+    <button class="CloseBtn7">X</button>  
+    <label>Username</label>
+    <input type="text" id="user2" class="user" placeholder="Username" name="l1" required>
+    <label>Password</label>
+    <input type="password" id="pass2" class="pass" placeholder="Password" name="l2" required>
+    <button class="submitbtn" type="submit" onclick="login()">Login</button>
+    </login>
+    <script>
+        const user= document.querySelector(".login");
+        const lsL= document.querySelector(".lsl");
+        const logB= document.querySelector("#logB");
+        const signB= document.querySelector("#signB");
+        const signup= document.querySelector(".signup");
+        const log= document.querySelector(".log");
+        const CloseBtn6 = document.querySelector(".CloseBtn6");
+        const CloseBtn7 = document.querySelector(".CloseBtn7");
+
+        user.addEventListener("click", () => {
+            lsL.classList.toggle("open");
+        })
+        dark.addEventListener("click", () => {
+            lsL.classList.toggle("dark");
+        })
+        light.addEventListener("click", () => {
+            lsL.classList.remove("dark");
+        })
+
+        logB.addEventListener("click", () => {
+            lsL.classList.remove("open");
+        })
+        logB.addEventListener("click", () => {
+            log.classList.toggle("open");
+        })
+        dark.addEventListener("click", () => {
+            log.classList.toggle("dark");
+        })
+        light.addEventListener("click", () => {
+            log.classList.remove("dark");
+        })
+
+        signB.addEventListener("click", () => {
+            lsL.classList.remove("open");
+        })
+        signB.addEventListener("click", () => {
+            signup.classList.toggle("open");
+        })
+        signB.addEventListener("click", () => {
+            log.classList.remove("open");
+        })
+        dark.addEventListener("click", () => {
+            signup.classList.toggle("dark");
+        })
+        light.addEventListener("click", () => {
+            signup.classList.remove("dark");
+        })
+
+        logB.addEventListener("click", () => {
+            signup.classList.remove("open");
+        })
+
+        CloseBtn6.addEventListener("click", () => {
+            signup.classList.remove("open");
+        })
+        CloseBtn7.addEventListener("click", () => {
+            log.classList.remove("open");
         })
 
     </script>
@@ -505,7 +664,7 @@
         <!-- recent -->
         <h2>Recent Notes</h2>
         <h3 class="demo">Demo Note:</h3>
-
+    
         <section id="output">
         <div class="list">
         <button class="delete">Delete</button>
