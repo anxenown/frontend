@@ -29,9 +29,15 @@
     </center>
     <script>
         const CloseBtn = document.querySelector(".CloseBtn");
+       // CloseBtn.addEventListener("click", () => {
+        //    output.appendChild(ANBody);
+            
+       // })  
         CloseBtn.addEventListener("click", () => {
             ANcontent.style.display = "none";
+            
         })
+      
        
     </script>
     <!-- Favourites -->
@@ -418,6 +424,8 @@
     <button class="CloseBtn6">X</button> 
     <label>Username</label>    
     <input type="text" id="user1" class="user" placeholder="Username" name="s1" required>
+    <label>Email</label>    
+    <input type="text" id="email" class="user" placeholder="Email" name="e1" required>
     <label>Password</label>
     <input type="password" id="pass1" class="pass" placeholder="Password" name="s2" required>
     <button class="submitbtn" type="submit" onclick="signup()">Signup</button>
